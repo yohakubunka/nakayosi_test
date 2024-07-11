@@ -1,0 +1,431 @@
+html {
+  font-size: 10px !important;
+}
+body {
+  background-color: $color1;
+  position: relative;
+  font-size: 1.6rem;
+  @extend .text;
+}
+body.active {
+  height: 100%;
+  overflow: hidden;
+}
+img {
+  max-width: 100%;
+}
+.title {
+  @extend .sectiontitle;
+  @include flex(center, center);
+  color: $color2;
+  font-size: 4rem;
+  margin-bottom: 56px;
+  &::before,
+  &::after {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+  }
+  &::before {
+    margin-right: 56px;
+  }
+  &::after {
+    margin-left: 56px;
+    transform: scale(-1, 1);
+  }
+  @include md {
+    font-size: 2.4rem;
+    margin-bottom: 40px;
+    &::before,
+    &::after {
+      width: 32px;
+      height: 32px;
+    }
+    &::before {
+      margin-right: 40px;
+    }
+    &::after {
+      margin-left: 40px;
+    }
+  }
+  @include sp {
+    &::before {
+      margin-right: 24px;
+    }
+    &::after {
+      margin-left: 24px;
+    }
+  }
+  //タイトル　アイコン１
+  &.icon-1::before,
+  &.icon-1::after {
+    content: "";
+    background: url(../images/svg/title_ico-1.svg) no-repeat center;
+    background-size: contain;
+  }
+  //タイトル　アイコン2
+  &.icon-2::before,
+  &.icon-2::after {
+    content: "";
+    background: url(../images/svg/title_ico-2.svg) no-repeat center;
+    background-size: contain;
+  }
+  //タイトル　アイコン3
+  &.icon-3::before,
+  &.icon-3::after {
+    content: "";
+    background: url(../images/svg/title_ico-3.svg) no-repeat center;
+    background-size: contain;
+  }
+  //タイトル　アイコン4
+  &.icon-4::before,
+  &.icon-4::after {
+    content: "";
+    background: url(../images/svg/title_ico-4.svg) no-repeat center;
+    background-size: contain;
+  }
+  //タイトル　アイコン5
+  &.icon-5::before,
+  &.icon-5::after {
+    content: "";
+    background: url(../images/svg/title_ico-5.svg) no-repeat center;
+    background-size: contain;
+  }
+}
+h3 {
+  font-size: 2.4rem;
+  @extend .subtitle;
+  color: $color2;
+  @include md {
+    font-size: 1.6rem;
+  }
+}
+a,
+ul,
+li,
+span,
+p,
+th,
+td {
+  font-size: 1.8rem;
+  @extend .text;
+  letter-spacing: 0.1em;
+  line-height: 1.6em;
+  color: $color2;
+  @include md {
+    font-size: 1.6rem;
+  }
+  @include sp {
+    font-size: 1.4rem;
+  }
+}
+a {
+  display: inline-block;
+}
+.pc {
+  @include md {
+    display: none;
+  }
+}
+.sp {
+  display: none;
+  @include md {
+    display: block;
+  }
+}
+br.pc-only {
+  @include md {
+    display: none;
+  }
+}
+br.sp-only {
+  display: none;
+  @include md {
+    display: block;
+  }
+}
+.post_date {
+  color: $color5;
+}
+/*------------- 背景 ---------------*/
+section {
+  padding-top: 160px;
+  @include md {
+    padding-top: 80px;
+  }
+}
+.last-section {
+  padding-bottom: 160px;
+  @include md {
+    padding-bottom: 80px;
+  }
+}
+.inner {
+  width: 100%;
+  padding: 0 16px 0 16px;
+  max-width: 1024px;
+  margin: 0 auto;
+  @include md {
+    padding: 0 32px;
+  }
+}
+.breadcrumb-list {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  height: 18px;
+  padding: 0 24px;
+  max-width: 1048px;
+  margin: 0 auto;
+  @include md {
+    padding: 0 32px;
+  }
+  li {
+    margin-right: 16px;
+    font-size: 14px;
+  }
+  p {
+    margin-right: 16px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  span {
+    line-height: 18px;
+    font-size: 14px;
+  }
+  @include md {
+    li {
+      font-size: 12px;
+    }
+    p {
+      font-size: 12px;
+    }
+    span {
+      font-size: 12px;
+    }
+  }
+}
+
+/*----------- レイアウト.整列 ------------*/
+// flexの中央寄せ
+.flex-center {
+  @include flex(center, center);
+}
+.flex-between {
+  @include flex(between, center, wrap);
+}
+.flexitem {
+  @include flex(between, center, wrap);
+}
+// flexの左寄せ
+.flex-left {
+  @include flex(start, center);
+}
+// flexの右寄せ
+.flex-right {
+  @include flex(end, end);
+}
+//flex
+.flexcolumn {
+  @include flex(between, start, wrap);
+  &.reverse {
+    flex-direction: row-reverse;
+  }
+  &__left {
+    max-width: calc(50% - 24px);
+    width: 100%;
+  }
+  &__right {
+    max-width: calc(50% - 24px);
+    width: 100%;
+  }
+}
+
+/*----------- パーツ類 ------------*/
+// リンクボタン　水色
+.link-btn {
+  p,
+  h3 {
+    text-align: center;
+    color: $color7;
+    background-color: $color3;
+    border-radius: 100px;
+    transition: 0.3s;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  &.ext-icon {
+    p::after {
+      content: "";
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      margin-left: 8px;
+      background-image: url(../images/svg/external_icon.svg);
+      background-size: contain;
+      vertical-align: -1px;
+    }
+    h3::after {
+      content: "";
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      margin-left: 8px;
+      background-image: url(../images/svg/external_icon.svg);
+      background-size: contain;
+      vertical-align: -1px;
+    }
+  }
+  // リンクボタン　黄緑　マップリンク
+  &.map-btn {
+    p {
+      background-color: $color4;
+    }
+    p::after {
+      content: "";
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      margin-left: 8px;
+      background-image: url(../images/svg/external_icon.svg);
+      background-size: contain;
+      vertical-align: -1px;
+    }
+  }
+}
+
+// ボタンデザイン　黄緑　投稿カテゴリー
+.post_category {
+  width: 160px;
+  p {
+    width: 160px;
+    height: 40px;
+    line-height: 40px;
+    color: $color7;
+    background-color: $color4;
+    text-align: center;
+    border-radius: 100px;
+  }
+  @include md {
+    width: 120px;
+    p {
+      width: 120px;
+      height: 32px;
+      line-height: 32px;
+    }
+  }
+}
+
+// 背景にイラスト付与（左上&右下）
+.illust-back1 {
+  max-width: 1356px;
+  width: 100%;
+  margin: 0 auto;
+  background-image: url(../images/common/illust_L.png), url(../images/common/illust_R.png);
+  background-position: 0 0, 100% 100%;
+  background-repeat: no-repeat;
+  @include md {
+    background: none;
+  }
+}
+
+// 背景にイラスト付与（左下&右下）
+.illust-back2 {
+  max-width: 1356px;
+  width: 100%;
+  margin: 0 auto;
+  background-image: url(../images/common/illust_L_2.png), url(../images/common/illust_R_2.png);
+  background-position: 0 100%, 100% 100%;
+  background-repeat: no-repeat;
+  @include md {
+    background: none;
+  }
+}
+
+.illust-back3 {
+  max-width: 1535px;
+  width: 100%;
+  margin: 0 auto;
+  background-image: url(../images/common/illust_L_4.png), url(../images/common/illust_R_4.png);
+  background-position: 0 0, 100% 100%;
+  background-repeat: no-repeat;
+  @include md {
+    background: none;
+  }
+}
+
+// 文頭に丸アイコンを付与
+.list-dot {
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    background-image: url(../images/svg/list-dot.svg);
+    background-size: contain;
+    vertical-align: -1px;
+    margin-right: 16px;
+  }
+}
+// ドットの下線を付与
+.dots-line {
+  background: url(../images/svg/dot.svg) repeat-x;
+  background-position: bottom;
+}
+
+//文末に矢印アイコンを付与
+.add-arrow {
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-image: url(../images/svg/arrow_icon.svg);
+    background-size: contain;
+    vertical-align: -8px;
+    @include md {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+// 画像に角丸四角の枠を付与　※背景色は各scssで指定
+.kadomaru-frame {
+  width: fit-content;
+  max-height: 265px;
+  border-radius: 20px;
+  width: 100%;
+  img {
+    border-radius: 60px;
+    object-fit: cover;
+    width: 100%;
+    max-height: 265px;
+  }
+}
+
+// 画像を角丸にする
+.kadomaru-img {
+  border-radius: 20px;
+  object-fit: cover;
+  max-height: 265px;
+}
+
+//画像に窓枠を付与
+.window-frame1 {
+  width: 100%;
+  border-radius: 149px 149px 20px 20px;
+  object-fit: cover;
+}
+.window-frame2 {
+  width: 100%;
+  border-radius: 196px 196px 20px 20px;
+  object-fit: cover;
+}
+
+//アコーディオン関連
+.accordion-content {
+  display: none;
+}

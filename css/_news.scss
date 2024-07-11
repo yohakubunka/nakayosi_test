@@ -1,0 +1,110 @@
+#news,#category,#date {
+    .inner {
+      align-items: start;
+      .news-col {
+        width: 72%;
+        article {
+          padding-bottom: 32px;
+          margin-bottom: 32px;
+          @include md {
+            padding-bottom: 16px;
+            margin-bottom: 16px;
+          }
+            .accordion-title {
+              cursor: pointer;
+              .flex-left {
+                margin-bottom: 16px;
+                .category_btn {
+                  margin-left: 40px;
+                  @include md {
+                    margin-left: 0;
+                  }
+                }
+                @include md {
+                  flex-wrap: wrap;
+                  .post_date {
+                    width: 100%;
+                    margin-bottom: 8px;
+                  }
+                }
+              }
+              .flex-between {
+                flex-wrap: nowrap;
+                .post_title {
+                  padding-right: 8px;
+                }
+                .arrow {
+                  transform: rotate(90deg);
+                  transition: 0.3s;
+                }
+              }
+              &.open {
+                .flex-between {
+                  .arrow {
+                    transform: rotate(-90deg);
+                  }
+                }
+              }
+            }
+          }
+          .accordion-content {
+            padding-top: 16px;
+            p {
+              margin-bottom: 16px;
+            }
+        }
+        .pagination{
+          padding-top: 30px;
+          .page-numbers{
+            display: flex;
+            align-items: center;
+            li{
+              margin-right: 16px;
+              a{
+                font-size: 2.4rem;
+                font-weight: 700;
+                color: $color6;
+              }
+              &{
+                span.current  {
+                  font-size: 2.4rem;
+                  font-weight: 700;
+                  color: $color4;
+                }
+              }
+            }
+            .prev-icon {
+              width: 32px;
+              height: 32px;
+              background: url(../images/svg/arrow_icon.svg) no-repeat bottom;
+              transform: rotate(180deg);
+              background-size: contain;
+            }
+            .next-icon {
+              width: 32px;
+              height: 32px;
+              background: url(../images/svg/arrow_icon.svg) no-repeat bottom;
+              background-size: contain;
+            }
+          }
+        }
+      }
+      .sidebar {
+        width: 22%;
+        h3 {
+          color: $color4;
+          margin-bottom: 16px;
+        }
+        .monthly-archive,
+        .category-list {
+          margin-bottom: 56px;
+          li {
+            margin-bottom: 8px;
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }

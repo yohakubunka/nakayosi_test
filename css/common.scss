@@ -1,0 +1,21 @@
+@charset "UTF-8";
+//コンパイルscss//
+@import "reset"; //ブラウザのデフォルトcssの打ち消し用
+@import "variable"; //色やブレークポイントの変数化
+@import "mixin"; //メディアクエリやflexの並び
+@import "base"; //共通パーツ・基本的なcssの記述
+@import "header"; //page-headerに使うcssの記述
+@import "footer"; //page-footerに使うcssの記述
+@import "front"; //front-pageに使うcssの記述
+@import "news"; //page-newsに使うcssの記述
+@import "about"; //page-aboutに使うcssの記述
+@import "life"; //page-lifeに使うcssの記述
+@import "info"; //page-infoに使うcssの記述
+@import "recruit"; //page-recruitに使うcssの記述
+@import "contact"; //page-contactに使うcssの記述
+
+/*
+* 案件担当者以外が記述する場合はなるべく此処に記述してください。
+* コーディング終了後修正記述用のscssファイルです。
+* このimportしたファイル以下に記述しないでください。
+*/

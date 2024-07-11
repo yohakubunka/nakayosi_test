@@ -1,0 +1,164 @@
+.footer{
+  width: 100%;
+  background-color: $color7;
+  position: relative;
+  z-index: 200;
+  .bg-layer {
+    width: 100%;
+    background: url(../images/common/footer_bg.png) no-repeat bottom;
+    background-size: cover;
+    @include sp {
+      background: url(../images/common/footer_bg-sp.png) no-repeat bottom;
+    }
+  }
+  &__inner{
+    max-width: 1024px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    padding: 160px 16px 90px;
+    @include md {
+      padding: 80px 32px 56px;
+    }
+    &--upper {
+      width: 100%;
+      margin-bottom: 56px;
+      align-items: start;
+      @include md {
+        flex-wrap: wrap;
+        margin-bottom: 32px;
+      }
+      .footer-logo {
+        img {
+          height: 116px;
+        }
+        @include md {
+          margin-bottom: 40px;
+          width: 100%;
+          text-align: left;
+        } 
+        @include sp {
+          img {
+            height: 67px;
+          }
+        } 
+      }
+      .btn-box {
+        width: 100%;
+        max-width: 320px;
+        .link-btn {
+          width: 100%;
+          max-width: 320px;
+          p {
+            font-size: 2.4rem;
+            width: 320px;
+            height: 64px;
+            line-height: 64px;
+          }
+       }
+       @include sp {
+        width: 100%;
+        .link-btn {
+          width: 100%;
+          a{
+            width: 100%;
+            p {
+              font-size: 1.6rem;
+              width: 100%;
+              height: 40px;
+              line-height: 40px;
+            }
+          }
+        }
+      }
+    }
+    }
+    &--under{
+      width: 100%;
+     .footer-company {
+      margin-bottom: 24px;
+      align-items: center;
+      .address {
+        margin-left: 16px;
+        font-weight: 500;
+      }
+      .address-no {
+        font-weight: 500;
+      }
+      .map-btn {
+        margin-left: 16px;
+        p {
+          width: 192px;
+          height: 40px;
+          line-height: 40px;
+        }
+      }
+      @include md {
+        flex-wrap: wrap;
+        .address-no,.address,.map-btn {
+          width: 100%;
+          margin-left: 0;
+        }
+        .address {
+          margin-bottom: 16px;
+        }
+        .address-no {
+          margin-bottom: 8px;
+        }
+      } 
+     }
+     .footer-company__tel {
+      align-items: center;
+      margin-bottom: 8px;
+      img {
+        width: 40px;
+        @include md{
+          width: 24px;
+        }
+      }
+      .phone-no {
+        font-size: 3.2rem;
+        margin-left: 16px;
+        font-weight: 700;
+        @include md{
+          font-size: 2.4rem;
+        }
+      }
+    }
+    }
+  }
+
+  .pagetop{
+    @include flex(end,end);
+    position: absolute;
+    right: 32px;
+    top: -83px;
+    z-index: 300;
+    &__inner{
+      @include flex(end,center,0,0,1);
+      p{
+        font-size: 1.4rem;
+        text-align: center;
+        margin-bottom: 8px;
+      }
+    }
+    @include md{
+      top: -42px;
+      &__inner{
+        p {
+          font-size: 1.0rem;
+        }
+        img {
+          width: 64px;
+        }
+      }
+    }
+  }
+
+  .copyright{
+    text-align: center;
+    color: $color2;
+    font-size: 1.4rem;
+    padding-bottom: 16px;
+  }
+}

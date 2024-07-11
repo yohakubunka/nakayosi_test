@@ -1,0 +1,292 @@
+#info {
+  .description {
+    margin-bottom: 32px;
+    text-align: center;
+  }
+  table {
+    width: 100%;
+    border: 2px solid $color3;
+    border-collapse: separate;
+    background-color: $color7;
+    border-spacing: 0;
+    border-radius: 20px;
+    overflow: hidden;
+    th, td {
+      vertical-align: middle;
+      border-right: 2px solid $color3;
+      border-bottom: 2px solid $color3;
+      padding: 20px;
+      &:last-child {
+        border-right: none;
+      }
+    }
+    th {
+      color: $color5;
+      font-weight: 700;
+    }
+    .head {
+      color: $color4;
+      text-align: center;
+      font-weight: 700;
+    }
+    tr {
+      &:last-child {
+        th, td {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+  .reference {
+    .ref-des {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .link-btn {
+      width: 520px;
+      margin: 0 auto;
+    h3 {
+      width: 520px;
+      height: 64px;
+      line-height: 64px;
+      color: $color7;
+      background-color: $color5;
+    }
+    @include md {
+      width: 100%;
+      a{
+        width: 100%;
+        h3 {
+          width: 100%;
+          height: 40px;
+          line-height: 40px;
+        }
+      }
+    }
+    @include sp {
+      h3 {
+        font-size: 1.2rem;
+        &::after {  
+          width: 14px;
+          height: 14px;
+          margin-left: 4px;
+          vertical-align: -2px;
+        }
+      }
+    }
+  }
+  }
+  // 入園資格
+  .qualification {
+    .qualifi-list {
+      background-color: $color7;
+      border-radius: 20px;
+      padding: 40px;
+      @include md {
+        padding: 24px;
+      }
+      &__inner {
+        .qualifi-cont {
+          padding-bottom: 16px;
+          margin-bottom: 24px;
+          .qualifi-text {
+            margin-bottom: 8px;
+            color: $color5;
+          }
+          .qualifi-annot {
+            margin-bottom: 8px;
+          }
+          &:last-child {
+            margin-bottom: 40px;
+          }
+        }
+      }
+    }
+  }
+  // 入園の流れ
+  .ad-flow {
+    .description {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .flex-between {
+      @include md {
+        width: 100%;
+        max-width: 375px;
+        margin: 0 auto;
+        justify-content: center;
+      }
+      &__box {
+        text-align: center;
+        max-width: calc((100% - 144px) / 4);
+        width: 100%;
+        height: 267px;
+        position: relative;
+        background-color: $color7;
+        @include md {
+          max-width: 211px;
+          margin-bottom: 48px;
+          height: 227px;
+        }
+        &::after {
+          position: absolute;
+          content: '';
+          display: inline-block;
+          width: 32px;
+          height: 32px;
+          background-image: url(../images/svg/arrow_icon.svg);
+          background-size: contain;
+          top: 50%;
+          right: -24px;
+          transform: translateY(-50%) translateX(60%);
+          -webkit-transform: translateY(-50%) translateX(60%);
+          @include md {
+            top: auto;
+            right: auto;
+            bottom: -16px;
+            transform:rotate(90deg) translateY(-50%); 
+            -webkit-transform: rotate(90deg) translateX(70%);
+          }
+        }
+        &:last-child {
+          margin-bottom: 0;
+          &::after {
+            display: none;
+          }
+        }
+        h3 {
+          text-align: center;
+        }
+        .step {
+          top: 40px;
+          left: 50%;
+          position: absolute;
+          color: $color3;
+          transform: translateX(-50%);
+          -webkit-transform: translateX(-50%);
+        }
+        .cont {
+          line-height: 1.5;
+        }
+      }
+    }
+  }
+  //　定員 
+  .capacity {
+    th, td {
+      text-align: center;
+      width: 13%;
+    }
+   .head {
+    width: 21%;
+   }
+   table.sp {
+    .head {
+      width: auto;
+     }
+    .age {
+      color: $color5;
+      font-weight: 700;
+    }
+   }
+  }
+
+  //費用
+  .cost {
+    .food-cost {
+      margin-bottom: 8px;
+      th {
+        text-align: center;
+      }
+      th, td {
+        width: 14%;
+        text-align: center;
+      }
+      .cost_price {
+        letter-spacing: 0;
+      }
+    }
+    .food-cost.sp {
+      th, td {
+        text-align: center;
+      }
+      .head {
+        width: auto;
+       }
+      .age {
+        color: $color5;
+        font-weight: 700;
+      }
+     }
+    .other-cost {
+      margin-bottom: 8px;
+      th, td {
+        width: 33%;
+        text-align: center;
+      }
+    }
+    .annotation {
+      margin-bottom: 32px;
+      p {
+        margin-right: 16px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+      @include md {
+        flex-wrap: wrap;
+        justify-content: left;
+        p {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  //提出書類
+  .download {
+    .inner {
+      min-height: 353px;
+      @include md {
+        min-height: auto;
+      }
+      .flexitem {
+        width: 100%;
+        &__box {
+          max-width: calc((100% - 48px)/2);
+          width: 100%;
+          margin-bottom: 24px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          @include md {
+            max-width: 100%;
+          }
+            a {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin: 0 auto;
+              padding: 40px;
+              width: 100%;
+              border-radius: 20px;
+              background-color: $color7;
+              @include md {
+                padding: 24px;
+              }
+              p {
+                transition: 0.3s;
+                color: $color5;
+                font-weight: 700;
+              }
+              &:hover {
+                p{
+                  opacity: 0.6;
+                }
+              }
+          }
+        }
+      }
+    }
+  }
+}
