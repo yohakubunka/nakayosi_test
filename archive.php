@@ -8,6 +8,7 @@
         <div class="news-col">
           <div class="news-contents">
             <div class="news__content--article">
+              <?php $target_article_id = false; // 変数を初期化 ?>
               <?php if (have_posts()) : ?>
                 <?php while (have_posts()) :  the_post() ?>
                   <?php if ($target_article_id === false) $target_article_id = get_the_id(); ?>
